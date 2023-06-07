@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calcular conta de luz</title>
+</head>
+<body>
+  <h1>Calcular conta de luz</h1>
+  <h2> JOSÉ LEONARDO NOVAIS DE ALMEIDA
+    MAT: 23114290131</h2>
+  <form>
+    <label for="tipoCliente">Tipo de cliente:</label>
+    <select id="tipoCliente">
+      <option value="Tipo 1">Tipo 1</option>
+      <option value="Tipo 2">Tipo 2</option>
+      <option value="Tipo 3">Tipo 3</option>
+    </select><br>
+    <label for="consumoKWh">Consumo em kWh:</label>
+    <input type="number" id="consumoKWh"><br>
+    <button type="button" onclick="calcularContaLuz()">Calcular conta de luz</button>
+  </form>
+  <div id="resultado"></div>
+
+  <script>
+    function calcularContaLuz() {
+  var tipoCliente = document.getElementById("tipoCliente").value;
+  var consumoKWh = parseInt(document.getElementById("consumoKWh").value);
+  var valorKWh = 0;
+  var valorConta = 0;
+
+  if (tipoCliente === "Tipo 1") {
+    valorKWh = 0.6;
+  } else if (tipoCliente === "Tipo 2") {
+    valorKWh = 0.48;
+  } else if (tipoCliente === "Tipo 3") {
+    valorKWh = 1.29;
+  }
+
+  valorConta = consumoKWh * valorKWh;
+
+  document.getElementById("resultado").textContent = "Valor da conta de luz: R$ " + valorConta.toFixed(2);
+}
+
+  </script>
+</body>
+</html>

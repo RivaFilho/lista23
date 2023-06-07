@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calcular salário de um professor</title>
+</head>
+<body>
+  <h1>Calcular salário de um professor</h1>
+  <h2> JOSÉ LEONARDO NOVAIS DE ALMEIDA
+    MAT: 23114290131</h2>
+  <form>
+    <label for="nivel">Nível do professor:</label>
+    <select id="nivel">
+      <option value="Nível 1">Nível 1</option>
+      <option value="Nível 2">Nível 2</option>
+      <option value="Nível 3">Nível 3</option>
+    </select><br>
+    <label for="horasAula">Quantidade de horas/aula:</label>
+    <input type="number" id="horasAula"><br>
+    <button type="button" onclick="calcularSalario()">Calcular salário</button>
+  </form>
+  <div id="resultado"></div>
+
+  <script>
+   function calcularSalario() {
+  var nivel = document.getElementById("nivel").value;
+  var horasAula = parseInt(document.getElementById("horasAula").value);
+  var valorHoraAula = 0;
+  var salario = 0;
+
+  if (nivel === "Nível 1") {
+    valorHoraAula = 12;
+  } else if (nivel === "Nível 2") {
+    valorHoraAula = 17;
+  } else if (nivel === "Nível 3") {
+    valorHoraAula = 25;
+  }
+
+  salario = valorHoraAula * horasAula;
+
+  document.getElementById("resultado").textContent = "Salário do professor: R$ " + salario.toFixed(2);
+}
+
+  </script>
+</body>
+</html>

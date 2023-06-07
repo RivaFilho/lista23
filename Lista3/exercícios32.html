@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Realizar operação</title>
+</head>
+<body>
+  <h1>Realizar operação</h1>
+  <h2> JOSÉ LEONARDO NOVAIS DE ALMEIDA
+    MAT: 23114290131</h2>
+  <form>
+    <label for="valorA">Valor A:</label>
+    <input type="number" id="valorA"><br>
+    <label for="valorB">Valor B:</label>
+    <input type="number" id="valorB"><br>
+    <label for="operador">Operador (+):</label>
+    <input type="text" id="operador" maxlength="1"><br>
+    <button type="button" onclick="realizarOperacao()">Realizar operação</button>
+  </form>
+  <div id="resultado"></div>
+
+  <script>
+  function realizarOperacao() {
+  var A = parseFloat(document.getElementById("valorA").value);
+  var B = parseFloat(document.getElementById("valorB").value);
+  var C = document.getElementById("operador").value;
+  var resultado = 0;
+
+  if (C === "+") {
+    resultado = A + B;
+  } else {
+    document.getElementById("resultado").textContent = "Operador não definido";
+    return;
+  }
+
+  document.getElementById("resultado").textContent = "Resultado: " + resultado;
+}
+
+  </script>
+</body>
+</html>

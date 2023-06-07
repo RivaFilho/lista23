@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ordenar valores em ordem crescente</title>
+</head>
+<body>
+  <h1>Ordenar valores em ordem crescente</h1>
+  <h2> JOSÉ LEONARDO NOVAIS DE ALMEIDA
+    MAT: 23114290131</h2>
+  <form>
+    <label for="valor1">Valor 1:</label>
+    <input type="number" id="valor1"><br>
+    <label for="valor2">Valor 2:</label>
+    <input type="number" id="valor2"><br>
+    <label for="valor3">Valor 3:</label>
+    <input type="number" id="valor3"><br>
+    <button type="button" onclick="ordenarValores()">Ordenar valores</button>
+  </form>
+  <div id="resultado"></div>
+
+  <script>
+    function ordenarValores() {
+  var valor1 = parseInt(document.getElementById("valor1").value);
+  var valor2 = parseInt(document.getElementById("valor2").value);
+  var valor3 = parseInt(document.getElementById("valor3").value);
+
+  var valores = [valor1, valor2, valor3];
+  valores.sort(function(a, b) {
+    return a - b;
+  });
+
+  document.getElementById("resultado").textContent = "Valores em ordem crescente: " + valores.join(", ");
+}
+
+  </script>
+</body>
+</html>

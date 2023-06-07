@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Reajuste salarial dos funcionários</title>
+</head>
+<body>
+  <h1>Reajuste salarial dos funcionários</h1>
+  <h2> JOSÉ LEONARDO NOVAIS DE ALMEIDA
+    MAT: 23114290131</h2>
+  <form>
+    <label for="nomeFuncionario">Nome do funcionário:</label>
+    <input type="text" id="nomeFuncionario"><br>
+    <label for="salarioAtual">Salário atual:</label>
+    <input type="number" id="salarioAtual"><br>
+    <label for="salarioMinimo">Salário mínimo:</label>
+    <input type="number" id="salarioMinimo"><br>
+    <button type="button" onclick="calcularReajuste()">Calcular reajuste</button>
+  </form>
+  <div id="resultado"></div>
+
+  <script>
+    // Função para calcular o reajuste do salário
+function calcularReajuste() {
+  var nomeFuncionario = document.getElementById("nomeFuncionario").value;
+  var salarioAtual = parseFloat(document.getElementById("salarioAtual").value);
+  var salarioMinimo = parseFloat(document.getElementById("salarioMinimo").value);
+  var novoSalario = 0;
+  var reajuste = 0;
+
+  if (salarioAtual < 3 * salarioMinimo) {
+    reajuste = salarioAtual * 0.5;
+  } else if (salarioAtual >= 3 * salarioMinimo && salarioAtual <= 10 * salarioMinimo) {
+    reajuste = salarioAtual * 0.2;
+  } else if (salarioAtual > 10 * salarioMinimo && salarioAtual <= 20 * salarioMinimo) {
+    reajuste = salarioAtual * 0.15;
+  } else {
+    reajuste = salarioAtual * 0.1;
+  }
+
+  novoSalario = salarioAtual + reajuste;
+
+  var aumentoFolha = reajuste * 584;
+
+  var resultadoDiv = document.getElementById("resultado");
+  resultadoDiv.innerHTML = "Funcionário: " + nomeFuncionario + "<br>";
+  resultadoDiv.innerHTML += "Reajuste: " + reajuste.toFixed(2) + "<br>";
+  resultadoDiv.innerHTML += "Novo salário: " + novoSalario.toFixed(2) + "<br><br>";
+  resultadoDiv.innerHTML += "Aumento total da folha de pagamento: " + aumentoFolha.toFixed(2);
+}
+
+
+  </script>
+</body>
+</html>

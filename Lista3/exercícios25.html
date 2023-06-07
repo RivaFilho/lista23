@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Verificador de números</title>
+</head>
+<body>
+    <style> 
+        body{
+            background-color: rgb(0, 0, 0);
+            color: aquamarine;
+            font: normal 20pt Arial;
+        }
+        h1{ color: aliceblue;
+    
+        }
+    
+    </style>
+  <h1>Verificador de números</h1>
+  <h2> JOSÉ LEONARDO NOVAIS DE ALMEIDA
+    MAT: 23114290131</h2>
+  <form>
+    <label for="num1">Número 1:</label>
+    <input type="text" id="num1"><br>
+    <label for="num2">Número 2:</label>
+    <input type="text" id="num2"><br>
+    <button type="button" onclick="verificarNumeros()">Verificar</button>
+  </form>
+  <div id="resultado"></div>
+
+  <script>
+    function verificarNumeros() {
+      var num1 = parseFloat(document.getElementById("num1").value);
+      var num2 = parseFloat(document.getElementById("num2").value);
+      var resultadoDiv = document.getElementById("resultado");
+
+      resultadoDiv.innerHTML = ""; // Limpa o conteúdo anterior
+
+      if (num1 === num2) {
+        resultadoDiv.innerHTML = "Os números são iguais.";
+      } else {
+        resultadoDiv.innerHTML = "Os números são diferentes.";
+
+        if (num1 > num2) {
+          resultadoDiv.innerHTML += " O número " + num1 + " é maior.";
+        } else {
+          resultadoDiv.innerHTML += " O número " + num2 + " é maior.";
+        }
+      }
+    }
+  </script>
+</body>
+</html>

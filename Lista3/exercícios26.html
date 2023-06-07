@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Conversor de número em extenso</title>
+</head>
+<body>
+  <h1>Conversor de número em extenso</h1>
+  <h2> JOSÉ LEONARDO NOVAIS DE ALMEIDA
+    MAT: 23114290131</h2>
+  <form>
+    <label for="numero">Digite um número (1 a 5):</label>
+    <input type="number" id="numero" min="1" max="5"><br>
+    <button type="button" onclick="converterPorExtenso()">Converter</button>
+  </form>
+  <div id="resultado"></div>
+
+  <script>
+    function converterPorExtenso() {
+      var numero = parseInt(document.getElementById("numero").value);
+      var resultadoDiv = document.getElementById("resultado");
+
+      resultadoDiv.innerHTML = ""; // Limpa o conteúdo anterior
+
+      switch (numero) {
+        case 1:
+          resultadoDiv.innerHTML = "Um";
+          break;
+        case 2:
+          resultadoDiv.innerHTML = "Dois";
+          break;
+        case 3:
+          resultadoDiv.innerHTML = "Três";
+          break;
+        case 4:
+          resultadoDiv.innerHTML = "Quatro";
+          break;
+        case 5:
+          resultadoDiv.innerHTML = "Cinco";
+          break;
+        default:
+          resultadoDiv.innerHTML = "Número inválido";
+      }
+    }
+  </script>
+</body>
+</html>

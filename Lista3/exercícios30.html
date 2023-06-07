@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Salário líquido do funcionário</title>
+</head>
+<body>
+  <h1>Salário líquido do funcionário</h1>
+  <h2> JOSÉ LEONARDO NOVAIS DE ALMEIDA
+    MAT: 23114290131</h2>
+  <form>
+    <label for="nome">Nome do funcionário:</label>
+    <input type="text" id="nome"><br>
+    <label for="idade">Idade do funcionário:</label>
+    <input type="number" id="idade"><br>
+    <label for="sexo">Sexo do funcionário:</label>
+    <select id="sexo">
+      <option value="M">Masculino</option>
+      <option value="F">Feminino</option>
+    </select><br>
+    <label for="salarioFixo">Salário fixo do funcionário:</label>
+    <input type="number" id="salarioFixo"><br>
+    <button type="button" onclick="calcularSalarioLiquido()">Calcular salário líquido</button>
+  </form>
+  <div id="resultado"></div>
+
+  <script>
+    function calcularSalarioLiquido() {
+  var nome = document.getElementById("nome").value;
+  var idade = parseInt(document.getElementById("idade").value);
+  var sexo = document.getElementById("sexo").value;
+  var salarioFixo = parseFloat(document.getElementById("salarioFixo").value);
+  var salarioLiquido = salarioFixo;
+  var abono = 0;
+
+  if (sexo === "M") {
+    if (idade <= 30) {
+      abono = 100;
+    } else {
+      abono = 50;
+    }
+  } else if (sexo === "F") {
+    if (idade <= 30) {
+      abono = 200;
+    } else {
+      abono = 80;
+    }
+  }
+
+  salarioLiquido += abono;
+
+  document.getElementById("resultado").textContent = "Nome: " + nome + "\nSalário Líquido: R$ " + salarioLiquido.toFixed(2);
+}
+
+  </script>
+</body>
+</html>
